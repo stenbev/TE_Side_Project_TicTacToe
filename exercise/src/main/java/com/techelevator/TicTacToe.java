@@ -44,14 +44,14 @@ public class TicTacToe {
                 return "O";
             }
         }
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 13; i++) {
             if (Arrays.asList(board).contains(String.valueOf(i + 1))) {
                 break;
-            } else if (i == 8) {
+            } else if (i == 12) {
                 return "Draw";
             }
         }
-        System.out.println(turn + "'s turn. Enter a slot number and place your draw: " + turn);
+        System.out.println(turn + "'s turn. Enter a slot number: " + turn);
         return null;
     }
 
@@ -81,7 +81,7 @@ public class TicTacToe {
         }
         System.out.println("Welcome to TicTacToe!");
         printTheBoard();
-        System.out.println("X will play first. Enter a slot number and place your draw.");
+        System.out.println("X will play first. Enter a slot number to play.");
         while (winner == null) {
             int numberInput = 0;
             try {
