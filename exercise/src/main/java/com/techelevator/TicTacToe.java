@@ -1,7 +1,6 @@
 package com.techelevator;
 
 import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -85,12 +84,13 @@ public class TicTacToe {
         while (winner == null) {
             int numberInput = 0;
             try {
-                numberInput = in.nextInt();
+                String numberInputtxt = in.nextLine();
+                numberInput = Integer.parseInt(numberInputtxt);
                 if (!(numberInput > 0 && numberInput <= 9)) {
                     System.out.println("You have entered and invalid number, please try again.");
                     continue;
                 }
-            } catch (InputMismatchException e) {
+            } catch (Exception e) {
                 System.out.println("You have entered and invalid input. Please enter a valid slot number.");
                 continue;
             }
